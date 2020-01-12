@@ -16,7 +16,7 @@
 * [Hash Table](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/01_Data_Structures/)
 
 
-### Algorithm
+### Algorithms
 
 * [Bubble Sort](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/02_Algorithm/)
 * [Insertion Sort](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/02_Algorithm/)
