@@ -1,6 +1,7 @@
-﻿using System;
+﻿using DataStructureLibrary.Queues.ArrayBasedQueues;
+using System;
 
-namespace ClientConsoleProgram
+namespace ConsoleApp
 {
     internal class Program
     {
@@ -12,7 +13,7 @@ namespace ClientConsoleProgram
         private static void Run()
         {
             int size = 32;
-            var queue = new DataStructureLibrary.Queue.Queue<int>();
+            var queue = new ArrayBasedQueue<int>();
 
             for (int i = 1; i <= size; i++)
             {
@@ -22,7 +23,7 @@ namespace ClientConsoleProgram
             for (int i = 1; i <= size; i++)
             {
                 int result = queue.Dequeue();
-                Console.Write($"{result} ");
+                Console.Write($"[{result}]");
             }
         }
     }

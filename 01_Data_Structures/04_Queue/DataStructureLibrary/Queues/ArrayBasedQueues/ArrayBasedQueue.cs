@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace DataStructureLibrary.Queue
+namespace DataStructureLibrary.Queues.ArrayBasedQueues
 {
-    public class Queue<T>
+    public class ArrayBasedQueue<T> : IQueue<T>
     {
         private const int _defaultCapacity = 16;
         private T[] _array;
@@ -10,11 +10,11 @@ namespace DataStructureLibrary.Queue
         private int _rear;
         private int _count;
 
-        public Queue()
+        public ArrayBasedQueue()
         {
             this._array = new T[_defaultCapacity];
         }
-        
+
         public void Enqueue(T value)
         {
             if (IsFull())
