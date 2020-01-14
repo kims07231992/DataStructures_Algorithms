@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DataStructureLibrary.BinaryTree
+namespace DataStructureLibrary.BinaryTrees
 {
-    public class BinaryTree<T>
+    public class BinaryTree<T> : IBinaryTree<T>
     {
         public BinaryTree()
         {
