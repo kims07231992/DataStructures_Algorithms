@@ -1,23 +1,21 @@
 ﻿using System;
 
-namespace DataStructureLibrary.SingleyLinkedList
+namespace DataStructureLibrary.SinglyLinkedList
 {
-    public class SingleyLinkedList<T>
+    public class SinglyLinkedList<T> : ISinglyLinkedList<T>
     {
-        public SingleyLinkedList()
+        public SinglyLinkedList()
         {
 
         }
 
-        public LinkedListNode<T> Head { get; set; }
+        public SinglyLinkedListNode<T> Head { get; set; }
         public int Count { get; private set; }
 
-        public void Add(LinkedListNode<T> node)
+        public void Add(SinglyLinkedListNode<T> node)
         {
             if (node == null)
-            {
                 throw new ArgumentNullException();
-            }
 
             if (this.Head == null)
             {
@@ -35,7 +33,7 @@ namespace DataStructureLibrary.SingleyLinkedList
             this.Count++;
         }
 
-        public void Remove(LinkedListNode<T> node)
+        public void Remove(SinglyLinkedListNode<T> node)
         {
             if (node == null || IsEmpty())
             {
@@ -63,7 +61,7 @@ namespace DataStructureLibrary.SingleyLinkedList
             }
         }
 
-        public void AddAfter(LinkedListNode<T> node, LinkedListNode<T> newNode)
+        public void AddAfter(SinglyLinkedListNode<T> node, SinglyLinkedListNode<T> newNode)
         {
             if (node == null || IsEmpty())
             {
@@ -75,7 +73,7 @@ namespace DataStructureLibrary.SingleyLinkedList
             this.Count++;
         }
 
-        public LinkedListNode<T> GetNode(int index)
+        public SinglyLinkedListNode<T> GetNode(int index)
         {
             if (index < 0 || index >= this.Count)
             {
@@ -87,7 +85,7 @@ namespace DataStructureLibrary.SingleyLinkedList
             {
                 current = current.Next;
             }
-    
+
             return current;
         }
 
