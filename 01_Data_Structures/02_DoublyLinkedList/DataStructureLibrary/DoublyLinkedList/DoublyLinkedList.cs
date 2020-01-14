@@ -2,7 +2,7 @@
 
 namespace DataStructureLibrary.DoublyLinkedList
 {
-    public class DoublyLinkedList<T>
+    public class DoublyLinkedList<T> : IDoublyLinkedList<T>
     {
         public DoublyLinkedList()
         {
@@ -10,10 +10,10 @@ namespace DataStructureLibrary.DoublyLinkedList
         }
 
         public int Count { get; private set; }
-        public LinkedListNode<T> FirstNode { get; set; } 
-        public LinkedListNode<T> LastNode { get; set; }
+        public DoublyLinkedListNode<T> FirstNode { get; private set; }
+        public DoublyLinkedListNode<T> LastNode { get; private set; }
 
-        public void Add(LinkedListNode<T> node)
+        public void Add(DoublyLinkedListNode<T> node)
         {
             if (node == null)
             {
@@ -33,7 +33,7 @@ namespace DataStructureLibrary.DoublyLinkedList
             this.Count++;
         }
 
-        public void AddAfter(LinkedListNode<T> node, LinkedListNode<T> newNode)
+        public void AddAfter(DoublyLinkedListNode<T> node, DoublyLinkedListNode<T> newNode)
         {
             if (node == null || newNode == null)
             {
@@ -47,7 +47,7 @@ namespace DataStructureLibrary.DoublyLinkedList
             this.Count++;
         }
 
-        public void Remove(LinkedListNode<T> node)
+        public void Remove(DoublyLinkedListNode<T> node)
         {
             if (node == null || IsEmpty())
             {
@@ -72,14 +72,14 @@ namespace DataStructureLibrary.DoublyLinkedList
             this.Count--;
         }
 
-        public LinkedListNode<T> GetNode(int index)
+        public DoublyLinkedListNode<T> GetNode(int index)
         {
             if (index < 0 || index >= this.Count)
             {
                 throw new IndexOutOfRangeException();
             }
 
-            LinkedListNode<T> current = this.FirstNode;
+            DoublyLinkedListNode<T> current = this.FirstNode;
             for (int i = 0; i < index; i++)
             {
                 current = current.Next;

@@ -1,7 +1,7 @@
 ﻿using DataStructureLibrary.DoublyLinkedList;
 using System;
 
-namespace ClientConsoleProgram
+namespace ConsoleApp
 {
     internal class Program
     {
@@ -13,10 +13,10 @@ namespace ClientConsoleProgram
         private static void Run()
         {
             var doublyLinkedList = new DoublyLinkedList<int>();
-            var firstNode = new LinkedListNode<int>(10);
-            var secondNode = new LinkedListNode<int>(20);
-            var thirdNode = new LinkedListNode<int>(30);
-            var forthNode = new LinkedListNode<int>(40);
+            var firstNode = new DoublyLinkedListNode<int>(10);
+            var secondNode = new DoublyLinkedListNode<int>(20);
+            var thirdNode = new DoublyLinkedListNode<int>(30);
+            var forthNode = new DoublyLinkedListNode<int>(40);
 
             doublyLinkedList.Add(firstNode);
             doublyLinkedList.Add(secondNode);
@@ -33,7 +33,7 @@ namespace ClientConsoleProgram
             var current = doublyLinkedList.FirstNode;
             while (current != null)
             {
-                Console.Write($"{current.Value} ");
+                Console.Write($"[{current.Value}]");
                 current = current.Next;
             }
             Console.WriteLine();
