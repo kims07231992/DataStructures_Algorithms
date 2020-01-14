@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace DataStructureLibrary.Stacks.ListBasedStack
+namespace DataStructureLibrary.Stacks.NodeBasedStack
 {
-    public class ListBasedStack<T> : IStack<T>
+    public class NodeBasedStack<T> : IStack<T>
     {
         private StackNode<T> _top;
         private int _count;
 
-        public ListBasedStack()
+        public NodeBasedStack()
         {
 
         }

@@ -1,9 +1,9 @@
 ﻿using DataStructureLibrary.Stacks;
 using DataStructureLibrary.Stacks.ArrayBasedStack;
-using DataStructureLibrary.Stacks.ListBasedStack;
+using DataStructureLibrary.Stacks.NodeBasedStack;
 using System;
 
-namespace ClientConsoleProgram
+namespace ConsoleApp
 {
     internal class Program
     {
@@ -18,9 +18,9 @@ namespace ClientConsoleProgram
             Console.WriteLine("Array Based Stack Test");
             RunIStackTest(arrayBasedStack);
 
-            IStack<int> listBasedStack = new ListBasedStack<int>();
+            IStack<int> nodeBasedStack = new NodeBasedStack<int>();
             Console.WriteLine("List Based Stack Test");
-            RunIStackTest(listBasedStack);
+            RunIStackTest(nodeBasedStack);
         }
 
         private static void RunIStackTest(IStack<int> stack)

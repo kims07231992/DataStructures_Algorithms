@@ -1,4 +1,5 @@
-﻿namespace DataStructureLibrary.Stacks.ListBasedStack
+﻿
+namespace DataStructureLibrary.Stacks.NodeBasedStack
 {
     public class StackNode<T>
     {

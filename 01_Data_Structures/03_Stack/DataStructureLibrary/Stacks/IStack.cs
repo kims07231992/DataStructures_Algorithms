@@ -1,4 +1,5 @@
-﻿namespace DataStructureLibrary.Stacks
+﻿
+namespace DataStructureLibrary.Stacks
 {
     public interface IStack<T>
     {
