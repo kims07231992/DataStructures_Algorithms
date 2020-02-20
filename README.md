@@ -10,7 +10,7 @@
 * [Stack](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/01_Data_Structures/)
 * [Queue](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/01_Data_Structures/)
 * [Binary Tree](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/01_Data_Structures/)
-* [Binary Serach Tree](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/01_Data_Structures/)
+* [Binary Serach Tree](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/01_Data_Structures/06_BST/)
 * [Graph](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/01_Data_Structures/)
 * [Heap](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/01_Data_Structures/)
 * [Hash Table](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/01_Data_Structures/)

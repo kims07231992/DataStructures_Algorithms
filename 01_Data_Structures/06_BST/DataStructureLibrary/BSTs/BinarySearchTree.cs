@@ -1,12 +1,58 @@
 ﻿using System;
 
-namespace DataStructures
+namespace DataStructureLibrary.BSTs
 {
-    public class BST<T> where T : IComparable<T>
+    public class BinarySearchTree<T> where T : IComparable<T>
     {
-        private BSTNode<T> Root { get; set; }
+        private BinarySearchTreeNode<T> Root { get; set; }
 
-        public void Insert(BSTNode<T> newNode) //새 노드 (BSTNode<T>)를 BST 에 추가
+        public void Insert(T key)
+        {
+            var newNode = new BinarySearchTreeNode<T>(key);
+
+            if (Root == null)
+            {
+                Root = newNode;
+            }
+            else
+            {
+                InsertRecursive(Root, newNode);
+            }
+        }
+
+        private void InsertRecursive(BinarySearchTreeNode<T> node, BinarySearchTreeNode<T> newNode)
+        {
+            int comp = node.Key.CompareTo(newNode.Key);
+
+            if (comp == 0) //This instance is equal to value.
+            {
+                throw new ArgumentException();
+            }
+            else if (comp > 0) //This instance is less than value.
+            {
+                if (node.Left == null)
+                {
+                    node.Left = newNode;
+                }
+                else
+                {
+                    InsertRecursive(node.Left, newNode);
+                }
+            }
+            else //This instance is greater than value.
+            {
+                if (node.Right == null)
+                {
+                    node.Right = newNode;
+                }
+                else
+                {
+                    InsertRecursive(node.Right, newNode);
+                }
+            }
+        }
+
+        private void InsertIterative(BinarySearchTreeNode<T> newNode)
         {
             if (Root == null)
             {
@@ -14,21 +60,21 @@ namespace DataStructures
             }
             else
             {
-                BSTNode<T> node = Root;
+                var node = Root;
 
                 while (node != null)
                 {
                     int comp = node.Key.CompareTo(newNode.Key);
 
-                    if (comp == 0) //This instance is equal to value.
+                    if (comp == 0) // This instance is equal to value.
                     {
                         throw new ArgumentException();
                     }
-                    else if (comp > 0) //This instance is less than value.
+                    else if (comp > 0) // This instance is less than value.
                     {
                         if (node.Left == null)
                         {
-                            node.Left = new BSTNode<T>(newNode.Key);
+                            node.Left = new BinarySearchTreeNode<T>(newNode.Key);
                             return;
                         }
                         else
@@ -36,11 +82,11 @@ namespace DataStructures
                             node = node.Left;
                         }
                     }
-                    else //This instance is greater than value.
+                    else // This instance is greater than value.
                     {
                         if (node.Right == null)
                         {
-                            node.Right = new BSTNode<T>(newNode.Key);
+                            node.Right = new BinarySearchTreeNode<T>(newNode.Key);
                             return;
                         }
                         else
@@ -52,7 +98,7 @@ namespace DataStructures
             }
         }
 
-        public bool Remove(BSTNode<T> deleteNode) //BST에서 하나의 노드를 삭제
+        public bool Remove(T key)
         {
             if (Root == null)
             {
@@ -60,11 +106,11 @@ namespace DataStructures
             }
             else
             {
-                BSTNode<T> prev = null;
-                BSTNode<T> current = Root;
+                BinarySearchTreeNode<T> prev = null;
+                BinarySearchTreeNode<T> current = Root;
 
-                FindNode(ref prev, ref current, deleteNode);           
-                if (current == null) //if there is no deleteNode
+                FindNode(ref prev, ref current, key);
+                if (current == null) // if there is no deleteNode
                 {
                     return false;
                 }
@@ -73,11 +119,12 @@ namespace DataStructures
                 return true;
             }
         }
-        private void FindNode(ref BSTNode<T> prev, ref BSTNode<T> current, BSTNode<T> deleteNode)
+
+        private void FindNode(ref BinarySearchTreeNode<T> prev, ref BinarySearchTreeNode<T> current, T key)
         {
             while (current != null)
             {
-                int comp = current.Key.CompareTo(deleteNode.Key);
+                int comp = current.Key.CompareTo(key);
                 if (comp == 0)
                 {
                     break;
@@ -94,7 +141,8 @@ namespace DataStructures
                 }
             }
         }
-        private void RemoveNode(BSTNode<T> prev, BSTNode<T> current)
+
+        private void RemoveNode(BinarySearchTreeNode<T> prev, BinarySearchTreeNode<T> current)
         {
             if (current.Left == null && current.Right == null)  // leaf
             {
@@ -146,55 +194,32 @@ namespace DataStructures
                 {
                     prev.Right = child;
                 }
-            }           
-        }
-
-        public BSTNode<T> Search(T key) //데이타(Key)를 탐색하여 있으면 해당 노드를 리턴, 없으면 null 리턴
-        {
-            if (Root == null)
-            {
-                return null;
-            }
-            else
-            {
-                BSTNode<T> node = SearchRecursive(Root, key);
-                return node;
-            }
-        }
-        private BSTNode<T> SearchRecursive(BSTNode<T> node, T key)
-        {
-            int result = node.Key.CompareTo(key);
-
-            if ((node == null) || (result == 0)) // There is no equal value || This instance is equal to value.
-            {
-                return node;
-            }
-            else if (result > 0) //This instance is less than value.
-            {
-                return SearchRecursive(node.Left, key);
-            }
-            else //This instance is greater than value.
-            {
-                return SearchRecursive(node.Right, key);
             }
         }
 
-        public void InOrderTraversal()
+        public bool Search(T key)
         {
-            InOrderRecursive(Root);
-        }
-        private void InOrderRecursive(BSTNode<T> node)
-        {
-            if (node == null)
+            BinarySearchTreeNode<T> node = Root;
+
+            while (node != null)
             {
-                return;
+                int comp = node.Key.CompareTo(key);
+
+                if (comp == 0) //This instance is equal to value.
+                {
+                    return true;
+                }
+                else if (comp > 0) //This instance is less than value.
+                {
+                    node = node.Left;
+                }
+                else //This instance is greater than value.
+                {
+                    node = node.Right;
+                }
             }
-            else
-            {
-                InOrderRecursive(node.Left);
-                Console.Write(node.Key);
-                InOrderRecursive(node.Right);
-            }
+
+            return false;
         }
     }
 }
