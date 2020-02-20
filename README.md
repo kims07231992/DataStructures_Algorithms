@@ -14,7 +14,7 @@
 * [Graph](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/01_Data_Structures/)
 * [Heap](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/01_Data_Structures/)
 * [Hash Table](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/01_Data_Structures/)
-
+* [LRU Cache](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/01_Data_Structures/10_LRU_Cache/)
 
 ### Algorithms
 
