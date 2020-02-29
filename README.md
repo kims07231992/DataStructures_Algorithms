@@ -25,5 +25,6 @@
 * [Breadth First Search](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/02_Algorithm/)
 * [Depth First Search](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/02_Algorithm/)
 * [Dijkstra](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/02_Algorithms/Dijkstra/)
+* [Articulation Points](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/02_Algorithms/Articulation_Points/)
 * [Dynamic Fibonacci](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/02_Algorithm/) - Basic implementation of dynamic programming.
 * [Divide And Conquer Power](https://github.com/kims07231992/DataStructures_Algorithms/tree/master/02_Algorithm/) - Basic implementation of divide and conquer concept.
